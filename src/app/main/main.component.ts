@@ -11,6 +11,7 @@ export class MainComponent implements OnInit {
 
   movies: Movie[] = [];
   selectedMovie = null;
+  editedMovie = null;
 
   constructor(
     private apiService: ApiService
@@ -24,9 +25,20 @@ export class MainComponent implements OnInit {
       error => console.log(error)
     );
   }
-
   selectMovie(movie: Movie) {
     this.selectedMovie = movie;
+    this.editedMovie = null;
   }
-
+  editMovie(movie: Movie) {
+    this.editedMovie = movie;
+    this.selectedMovie = null;
+  }
+  createNewMovie() {
+    this.editedMovie = {title: '', description: ''};
+    this.selectedMovie = null;
+  }
+  deletedMovie(movie: Movie) {
+    // TODO remove with API
+    console.log('delete', movie.title)
+  }
 }
