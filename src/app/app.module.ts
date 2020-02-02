@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { fromEventPattern } from 'rxjs';
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: 'movies'}
+  {path: '', pathMatch: 'full', redirectTo: 'auth'}
 ];
 
 @NgModule({
